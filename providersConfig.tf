@@ -1,4 +1,5 @@
 variable "subscription_id01" {}
+#something
 
 # The default provider configuration for default subscription
 provider "azurerm" {
