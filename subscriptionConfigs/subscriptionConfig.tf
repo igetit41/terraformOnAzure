@@ -8,5 +8,5 @@ provider "azurerm" {}
 resource "azurerm_resource_group" "first-rg" {
   provider = "azurerm"
   name     = "${var.prefix}-rg01"
-  location = "${var.region}-rg01"
+  location = "${var.region}"
 }
