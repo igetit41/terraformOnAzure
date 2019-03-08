@@ -2,6 +2,7 @@ variable "ARM_CLIENT_ID" {}
 variable "ARM_CLIENT_SECRET" {}
 variable "ARM_TENANT_ID" {}
 
+# testing comments
 #Passed in subscription id number 1
 variable "subscription_id01" {}
 
@@ -54,5 +55,3 @@ module "ct-terraform02-module" {
   prefix = "ct-terraform02"
   region = "eastus2"
 }
-
-
