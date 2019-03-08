@@ -1,3 +1,7 @@
+variable "ARM_CLIENT_ID" {}
+variable "ARM_CLIENT_SECRET" {}
+variable "ARM_TENANT_ID" {}
+
 #Passed in subscription id number 1
 variable "subscription_id01" {}
 
@@ -5,6 +9,9 @@ variable "subscription_id01" {}
 provider "azurerm" {
   alias  = "ct-terraform01"
   subscription_id = "${var.subscription_id01}"
+  client_id       = "${var.ARM_CLIENT_ID}"
+  client_secret   = "${var.ARM_CLIENT_SECRET}"
+  tenant_id       = "${var.ARM_TENANT_ID}"
 }
 
 #Call environment module for subscription number 1
@@ -33,6 +40,9 @@ variable "subscription_id02" {}
 provider "azurerm" {
   alias  = "ct-terraform02"
   subscription_id = "${var.subscription_id02}"
+  client_id       = "${var.ARM_CLIENT_ID}"
+  client_secret   = "${var.ARM_CLIENT_SECRET}"
+  tenant_id       = "${var.ARM_TENANT_ID}"
 }
 
 #Call environment module for subscription number 2
