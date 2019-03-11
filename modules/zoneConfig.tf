@@ -1,6 +1,7 @@
 
 variable "prefix" {}
 variable "region" {}
+variable "designation" {}
 
 provider "azurerm" {}
 
