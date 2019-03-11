@@ -13,8 +13,8 @@ provider "azurerm" {
   alias  = "ct-terraform01"
   subscription_id = "${var.subscription_id01}"
   client_id       = "${data.external.connectionVars.result.ARM_CLIENT_ID}"
-  client_secret   = "${var.ARM_CLIENT_SECRET}"
-  tenant_id       = "${var.ARM_TENANT_ID}"
+  client_secret   = "${data.external.connectionVars.result.ARM_CLIENT_SECRET}"
+  tenant_id       = "${data.external.connectionVars.result.ARM_TENANT_ID}"
 }
 
 #Call environment module for subscription number 1
@@ -44,8 +44,8 @@ provider "azurerm" {
   alias  = "ct-terraform02"
   subscription_id = "${var.subscription_id02}"
   client_id       = "${data.external.connectionVars.result.ARM_CLIENT_ID}"
-  client_secret   = "${var.ARM_CLIENT_SECRET}"
-  tenant_id       = "${var.ARM_TENANT_ID}"
+  client_secret   = "${data.external.connectionVars.result.ARM_CLIENT_SECRET}"
+  tenant_id       = "${data.external.connectionVars.result.ARM_TENANT_ID}"
 }
 
 #Call environment module for subscription number 2
