@@ -2,8 +2,6 @@
 data "external" "connectionVars" {
   program = ["sh", "connectionVars.sh" ]
 }
-variable "ARM_CLIENT_SECRET" {}
-variable "ARM_TENANT_ID" {}
 
 #Passed in subscription id number 1
 variable "subscription_id01" {}
