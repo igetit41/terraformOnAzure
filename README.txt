@@ -23,11 +23,11 @@ git clone https://igetit41@github.com/igetit41/terraformOnAzure.git
 #Check it
 cd terraformOnAzure
 terraform init
-TF_VAR_ARM_CLIENT_ID=$ARM_CLIENT_ID TF_VAR_ARM_CLIENT_SECRET=$ARM_CLIENT_SECRET TF_VAR_ARM_TENANT_ID=$ARM_TENANT_ID TF_VAR_subscription_id01=$subscription_id01 TF_VAR_subscription_id02=$subscription_id02 terraform plan
+TF_VAR_subscription_id01=$subscription_id01 TF_VAR_subscription_id02=$subscription_id02 terraform plan
 
 
 
 
 #Apply it
 cd terraformOnAzure
-TF_VAR_ARM_CLIENT_ID=$ARM_CLIENT_ID TF_VAR_ARM_CLIENT_SECRET=$ARM_CLIENT_SECRET TF_VAR_ARM_TENANT_ID=$ARM_TENANT_ID TF_VAR_subscription_id01=$subscription_id01 TF_VAR_subscription_id02=$subscription_id02 terraform apply
+TF_VAR_subscription_id01=$subscription_id01 TF_VAR_subscription_id02=$subscription_id02 terraform apply
