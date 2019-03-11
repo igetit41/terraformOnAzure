@@ -1,0 +1,3 @@
+#!/bin/sh -xe
+
+echo {\"ARM_CLIENT_ID\":\""$ARM_CLIENT_ID"\",\"ARM_CLIENT_SECRET\":\""$ARM_CLIENT_SECRET"\",\"ARM_TENANT_ID\":\""$ARM_TENANT_ID"\"}

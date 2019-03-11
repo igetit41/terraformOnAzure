@@ -10,12 +10,12 @@ sudo apt-get install unzip
 unzip terraform_${VER}_linux_amd64.zip
 sudo mv terraform /usr/local/bin/
 
-#Append to end of .bashrc and then "sudo reboot"
-ARM_CLIENT_ID=<CLIENT_ID>
-ARM_CLIENT_SECRET=<CLIENT_SECRET>
-ARM_TENANT_ID=<TENANT_ID>
-subscription_id01=<subscription_id01>
-subscription_id02=<subscription_id01>
+#run the following exports
+export ARM_CLIENT_ID=<CLIENT_ID>
+export ARM_CLIENT_SECRET=<CLIENT_SECRET>
+export ARM_TENANT_ID=<TENANT_ID>
+export subscription_id01=<subscription_id01>
+export subscription_id02=<subscription_id01>
 
 #Clone Repo
 git clone https://igetit41@github.com/igetit41/terraformOnAzure.git
@@ -23,11 +23,11 @@ git clone https://igetit41@github.com/igetit41/terraformOnAzure.git
 #Check it
 cd terraformOnAzure
 terraform init
-TF_VAR_ARM_CLIENT_ID=$ARM_CLIENT_ID TF_VAR_ARM_CLIENT_SECRET=$ARM_CLIENT_SECRET TF_VAR_ARM_TENANT_ID=$ARM_TENANT_ID TF_VAR_subscription_id01=$subscription_id01 TF_VAR_subscription_id02=$subscription_id02 terraform plan
+TF_VAR_subscription_id01=$subscription_id01 TF_VAR_subscription_id02=$subscription_id02 terraform plan
 
 
 
 
 #Apply it
 cd terraformOnAzure
-TF_VAR_ARM_CLIENT_ID=$ARM_CLIENT_ID TF_VAR_ARM_CLIENT_SECRET=$ARM_CLIENT_SECRET TF_VAR_ARM_TENANT_ID=$ARM_TENANT_ID TF_VAR_subscription_id01=$subscription_id01 TF_VAR_subscription_id02=$subscription_id02 terraform apply
+TF_VAR_subscription_id01=$subscription_id01 TF_VAR_subscription_id02=$subscription_id02 terraform apply
