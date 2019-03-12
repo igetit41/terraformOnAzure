@@ -24,6 +24,9 @@ module "ct-terraform01-module" {
   prefix = "ct-terraform01"
   region = "westus2"
   designation = "pd"
+  address_space = "${list("192.168.0.0/24","192.168.1.0/24")}"
+  subnets_names = "${list("Subnet_01","Subnet_02")}"
+  subnets_address_prefixes = "${list("192.168.0.0/25","192.168.0.128/25")}"
 }
 
 
@@ -55,5 +58,8 @@ module "ct-terraform02-module" {
   }
   prefix = "ct-terraform02"
   region = "eastus2"
-  designation = "pd"
+  designation = "np"
+  address_space = "${list("192.168.128.0/24", "192.168.129.0/24")}"
+  subnets_names = "${list("Subnet_01","Subnet_02")}"
+  subnets_address_prefixes = "${list("192.168.128.0/25","192.168.128.128/25")}"
 }
