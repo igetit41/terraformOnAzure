@@ -2,7 +2,12 @@
 data "external" "connectionVars" {
   program = ["sh", "connectionVars.sh" ]
 }
-
+/*
+data "peering_vnet_list" {
+  type = "list"
+  default = []
+}
+*/
 #Subscription01 ID
 variable "subscription_id01" {}
 
