@@ -29,7 +29,7 @@ resource "azurerm_virtual_network" "vnet01" {
 }
 
 resource "azurerm_subnet" "vnet01_subnets" {
-  count                 = "${length(list(var.subnets_address_prefixes))}"
+  count                 = "${length(var.subnets_address_prefixes)}"
   name                  = "${element(var.subnets_names,count.index)}"
   resource_group_name   = "${azurerm_resource_group.first-rg.name}"
   virtual_network_name  = "${azurerm_virtual_network.vnet01.name}"
