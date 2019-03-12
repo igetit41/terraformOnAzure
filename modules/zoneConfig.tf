@@ -24,13 +24,16 @@ resource "azurerm_resource_group" "first-rg" {
 resource "azurerm_virtual_network" "vnet01" {
   name                = "${azurerm_resource_group.first-rg.name}-${var.designation}-vnet01"
   resource_group_name = "${azurerm_resource_group.first-rg.name}"
-  address_space       = "${list(var.address_space)}"
+  address_space       = ["${list(var.address_space)}"]
   location            = "${var.region}"
-
-  subnet {
-    count = "${length(list(var.subnets_address_prefixes))}"
-    name           = "${element(var.subnets_names,count.index)}"
-    address_prefix = "${element(var.subnets_address_prefixes,count.index)}"
-  }
 }
 
+
+
+resource "azurerm_subnet" "vnet01_subnets" {
+  count           = "${length(list(var.subnets_address_prefixes))}"
+  name            = "${element(var.subnets_names,count.index)}"
+  resource_group_name  = "${azurerm_resource_group.first-rg.name}"
+  virtual_network_name = "${azurerm_virtual_network.vnet01.name}"
+  address_prefix  = "${element(var.subnets_address_prefixes,count.index)}"
+}
