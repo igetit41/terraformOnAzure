@@ -24,7 +24,7 @@ resource "azurerm_resource_group" "first-rg" {
 resource "azurerm_virtual_network" "vnet01" {
   name                = "${azurerm_resource_group.first-rg.name}-${var.designation}-vnet01"
   resource_group_name = "${azurerm_resource_group.first-rg.name}"
-  address_space       = ["${list(var.address_space)}"]
+  address_space       = "${var.address_space}"
   location            = "${var.region}"
 }
 
