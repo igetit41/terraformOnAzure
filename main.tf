@@ -10,7 +10,7 @@ variable "namePrefix" {
 
 
 locals {
-  peering_vnet_list = []
+  peering_vnet_list = "${azurerm_virtual_network.vnet01.*.id}"
 }
 
 #Subscription01 ID
@@ -39,11 +39,11 @@ module "ct-terraform01-module" {
   subnets_address_prefixes = "${list("192.168.0.0/25","192.168.0.128/25")}"
 }
 
-
+/*
 locals {
   peering_vnet_list = "${merge(local.peering_vnet_list,list(module.ct-terraform01-module.azurerm_virtual_network))}"
 }
-
+*/
 
 
 
@@ -77,11 +77,11 @@ module "ct-terraform02-module" {
   subnets_address_prefixes = "${list("192.168.128.0/25","192.168.128.128/25")}"
 }
 
-
+/*
 locals {
   peering_vnet_list = "${merge(local.peering_vnet_list,list(module.ct-terraform01-module.azurerm_virtual_network))}"
 }
-
+*/
 output "output" {
   value = "${local.peering_vnet_list}"
 }
