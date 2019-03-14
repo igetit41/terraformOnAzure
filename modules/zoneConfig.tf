@@ -46,11 +46,6 @@ output "vnet_id" {
   value = "${azurerm_virtual_network.vnet01.id}"
 }
 
-output "vnet_peerings" {
-  //value = "${azurerm_virtual_network.vnet01.vnet_peerings}"
-  value = "${azurerm_virtual_network.vnet01.vnet_peerings != null ? azurerm_virtual_network.vnet01.vnet_peerings : list()}"
-}
-
 
 /*
 resource "azurerm_virtual_network_peering" "near_side" {

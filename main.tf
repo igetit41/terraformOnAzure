@@ -44,9 +44,6 @@ output "ct-terraform01_vnet_rg" {
 output "ct-terraform01_vnet_id" {
   value = "${module.ct-terraform01-module.vnet_id}"
 }
-output "ct-terraform01_vnet_peerings" {
-  value = "${module.ct-terraform01-module.vnet_peerings}"
-}
 
 
 
@@ -89,7 +86,4 @@ output "ct-terraform02_vnet_rg" {
 }
 output "ct-terraform02_vnet_id" {
   value = "${module.ct-terraform02-module.vnet_id}"
-}
-output "ct-terraform02_vnet_peerings" {
-  value = "${module.ct-terraform02-module.vnet_peerings}"
 }
