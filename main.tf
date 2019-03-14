@@ -41,7 +41,7 @@ module "ct-terraform01-module" {
 
 
 locals {
-  peering_vnet_list = "${merge(local.peering_vnet_list,list(module.ct-terraform01-module.azurerm_virtual_network)}"
+  peering_vnet_list = "${merge(local.peering_vnet_list,list(module.ct-terraform01-module.azurerm_virtual_network))}"
 }
 
 
