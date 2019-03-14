@@ -48,7 +48,7 @@ output "vnet_id" {
 
 output "vnet_peerings" {
   //value = "${azurerm_virtual_network.vnet01.vnet_peerings}"
-  value = "${azurerm_virtual_network.vnet01.vnet_peerings != nil ? azurerm_virtual_network.vnet01.vnet_peerings : list()}"
+  value = "${azurerm_virtual_network.vnet01.vnet_peerings != null ? azurerm_virtual_network.vnet01.vnet_peerings : list()}"
 }
 
 
