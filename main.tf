@@ -36,15 +36,15 @@ module "ct-terraform01-module" {
 
 
 output "ct-terraform01_vnet_name" {
-  value = "${module.ct-terraform01-module.name}"
+  value = "${module.ct-terraform01-module.vnet_name}"
 }
-output "ct-terraform01_vnet_vnet_rg" {
-  value = "${module.ct-terraform01-module.resource_group_name}"
+output "ct-terraform01_vnet_rg" {
+  value = "${module.ct-terraform01-module.vnet_rg}"
 }
-output "ct-terraform01_vnet_vnet_id" {
-  value = "${module.ct-terraform01-module.id}"
+output "ct-terraform01_vnet_id" {
+  value = "${module.ct-terraform01-module.vnet_id}"
 }
-output "ct-terraform01_vnet_vnet_peerings" {
+output "ct-terraform01_vnet_peerings" {
   value = "${module.ct-terraform01-module.vnet_peerings}"
 }
 
@@ -82,14 +82,14 @@ module "ct-terraform02-module" {
 
 
 output "ct-terraform02_vnet_name" {
-  value = "${module.ct-terraform02-module.name}"
+  value = "${module.ct-terraform02-module.vnet_name}"
 }
-output "ct-terraform02_vnet_vnet_rg" {
-  value = "${module.ct-terraform02-module.resource_group_name}"
+output "ct-terraform02_vnet_rg" {
+  value = "${module.ct-terraform02-module.vnet_rg}"
 }
-output "ct-terraform02_vnet_vnet_id" {
-  value = "${module.ct-terraform02-module.id}"
+output "ct-terraform02_vnet_id" {
+  value = "${module.ct-terraform02-module.vnet_id}"
 }
-output "ct-terraform02_vnet_vnet_peerings" {
+output "ct-terraform02_vnet_peerings" {
   value = "${module.ct-terraform02-module.vnet_peerings}"
 }
