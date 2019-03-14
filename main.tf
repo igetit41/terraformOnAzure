@@ -9,7 +9,7 @@ variable "namePrefix" {
 }
 
 
-local {
+locals {
   peering_vnet_list = []
 }
 
@@ -40,7 +40,7 @@ module "ct-terraform01-module" {
 }
 
 
-local {
+locals {
   peering_vnet_list = "${merge(local.peering_vnet_list,list(module.ct-terraform01-module.azurerm_virtual_network)}"
 }
 
@@ -78,7 +78,7 @@ module "ct-terraform02-module" {
 }
 
 
-local {
+locals {
   peering_vnet_list = "${merge(local.peering_vnet_list,list(module.ct-terraform01-module.azurerm_virtual_network))}"
 }
 
