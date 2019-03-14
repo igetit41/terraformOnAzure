@@ -36,6 +36,10 @@ resource "azurerm_subnet" "vnet01_subnets" {
   address_prefix        = "${element(var.subnets_address_prefixes,count.index)}"
 }
 
+output "output" {
+  value = "${azurerm_virtual_network.vnet01.name}"
+}
+
 /*
 resource "azurerm_virtual_network_peering" "near_side" {
   count                     = "${length(module.*.azurerm_virtual_network.*)}"
