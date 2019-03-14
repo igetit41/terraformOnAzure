@@ -8,11 +8,6 @@ variable "namePrefix" {
   default = ""
 }
 
-
-locals {
-  peering_vnet_list = "${azurerm_virtual_network.vnet01.*.name}"
-}
-
 #Subscription01 ID
 variable "subscription_id01" {}
 
@@ -39,12 +34,19 @@ module "ct-terraform01-module" {
   subnets_address_prefixes = "${list("192.168.0.0/25","192.168.0.128/25")}"
 }
 
-/*
-locals {
-  peering_vnet_list = "${merge(local.peering_vnet_list,list(module.ct-terraform01-module.azurerm_virtual_network))}"
-}
-*/
 
+output "ct-terraform01_vnet_name" {
+  value = "${module.ct-terraform01-module.name}"
+}
+output "ct-terraform01_vnet_vnet_rg" {
+  value = "${module.ct-terraform01-module.resource_group_name}"
+}
+output "ct-terraform01_vnet_vnet_id" {
+  value = "${module.ct-terraform01-module.id}"
+}
+output "ct-terraform01_vnet_vnet_peerings" {
+  value = "${module.ct-terraform01-module.vnet_peerings}"
+}
 
 
 
@@ -77,11 +79,17 @@ module "ct-terraform02-module" {
   subnets_address_prefixes = "${list("192.168.128.0/25","192.168.128.128/25")}"
 }
 
-/*
-locals {
-  peering_vnet_list = "${merge(local.peering_vnet_list,list(module.ct-terraform01-module.azurerm_virtual_network))}"
+
+
+output "ct-terraform02_vnet_name" {
+  value = "${module.ct-terraform02-module.name}"
 }
-*/
-output "output" {
-  value = "${module.ct-terraform01-module.output}"
+output "ct-terraform02_vnet_vnet_rg" {
+  value = "${module.ct-terraform02-module.resource_group_name}"
+}
+output "ct-terraform02_vnet_vnet_id" {
+  value = "${module.ct-terraform02-module.id}"
+}
+output "ct-terraform02_vnet_vnet_peerings" {
+  value = "${module.ct-terraform02-module.vnet_peerings}"
 }
