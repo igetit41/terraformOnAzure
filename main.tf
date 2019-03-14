@@ -2,6 +2,12 @@
 data "external" "connectionVars" {
   program = ["sh", "connectionVars.sh" ]
 }
+
+#naming Prefix
+variable "namePrefix" {
+  default = ""
+}
+
 /*
 data "peering_vnet_list" {
   type = "list"
@@ -26,7 +32,7 @@ module "ct-terraform01-module" {
   providers = {
     azurerm = "azurerm.ct-terraform01"
   }
-  prefix = "ct-terraform01"
+  prefix = "${var.namePrefix}01"
   region = "westus2"
   designation = "pd"
   address_space = "${list("192.168.0.0/24","192.168.1.0/24")}"
@@ -61,7 +67,7 @@ module "ct-terraform02-module" {
   providers = {
     azurerm = "azurerm.ct-terraform02"
   }
-  prefix = "ct-terraform02"
+  prefix = "${var.namePrefix}02"
   region = "eastus2"
   designation = "np"
   address_space = "${list("192.168.128.0/24", "192.168.129.0/24")}"

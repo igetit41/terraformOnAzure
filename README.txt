@@ -16,6 +16,7 @@ export ARM_CLIENT_SECRET=<CLIENT_SECRET>
 export ARM_TENANT_ID=<TENANT_ID>
 export subscription_id01=<subscription_id01>
 export subscription_id02=<subscription_id01>
+export namePrefix=<namePrefix>
 
 #Clone Repo
 git clone https://igetit41@github.com/igetit41/terraformOnAzure.git
@@ -23,11 +24,11 @@ git clone https://igetit41@github.com/igetit41/terraformOnAzure.git
 #Check it
 cd terraformOnAzure
 terraform init
-TF_VAR_subscription_id01=$subscription_id01 TF_VAR_subscription_id02=$subscription_id02 terraform plan
+TF_VAR_subscription_id01=$subscription_id01 TF_VAR_subscription_id02=$subscription_id02 TF_VAR_namePrefix=$namePrefix terraform plan
 
 
 
 
 #Apply it
 cd terraformOnAzure
-TF_VAR_subscription_id01=$subscription_id01 TF_VAR_subscription_id02=$subscription_id02 terraform apply
+TF_VAR_subscription_id01=$subscription_id01 TF_VAR_subscription_id02=$subscription_id02 TF_VAR_namePrefix=$namePrefix terraform apply
