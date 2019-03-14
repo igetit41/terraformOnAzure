@@ -10,7 +10,7 @@ variable "namePrefix" {
 
 
 locals {
-  peering_vnet_list = "${azurerm_virtual_network.vnet01.*.id}"
+  peering_vnet_list = "${azurerm_virtual_network.vnet01.*.name}"
 }
 
 #Subscription01 ID
@@ -83,5 +83,5 @@ locals {
 }
 */
 output "output" {
-  value = "${local.peering_vnet_list}"
+  value = "${azurerm_virtual_network.vnet01.*.name}"
 }
