@@ -3,6 +3,11 @@ data "external" "connectionVars" {
   program = ["sh", "connectionVars.sh" ]
 }
 
+#Clear Peering List
+data "external" "createPeeringFile" {
+  program = ["sh", "createPeeringFile.sh" ]
+}
+
 #naming Prefix
 variable "namePrefix" {
   default = ""
