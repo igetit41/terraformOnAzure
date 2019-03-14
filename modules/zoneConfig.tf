@@ -37,7 +37,7 @@ resource "azurerm_subnet" "vnet01_subnets" {
 }
 
 output "output" {
-  value = "${azurerm_virtual_network.vnet01.name}"
+  value = "${azurerm_virtual_network.vnet01}"
 }
 
 /*
