@@ -83,5 +83,5 @@ locals {
 }
 */
 output "output" {
-  value = "${azurerm_virtual_network.vnet01.*.name}"
+  value = "${module.ct-terraform01-module.azurerm_virtual_network.vnet01.*.name}"
 }
